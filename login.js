@@ -31,7 +31,7 @@ app.post('/auth', function(request, response) {
 	console.log(password);
 
 	if (username && password) {
-		var query = `SELECT * FROM accounts WHERE username = ${username} AND password = ${password}`;
+		var query = `SELECT * FROM accounts WHERE username ='${username}' AND password = '${password}'`;
 		console.log(query);		
 		//connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 		connection.query(query, function(error, results, fields) {
